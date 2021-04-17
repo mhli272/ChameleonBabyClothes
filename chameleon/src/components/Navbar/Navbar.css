@@ -94,6 +94,7 @@
     transition: 0.3s;
     color: #686868;
     cursor: pointer;
+    /*{text-decoration: 'none';} */
 }
 
 .menu-item:hover {

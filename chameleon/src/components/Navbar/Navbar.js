@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { MenuItems } from "./MenuItems";
 import "./Navbar.css";
-import mainLogo from'../../images/logo.jpg';
+import mainLogo from'../../images/logo.png';
 import searchImg from'../../images/search.jpg';
 import cartImg from'../../images/cart.jpg';
 import userImg from'../../images/user.jpg';
@@ -21,7 +21,7 @@ class Navbar extends Component{
             
                 <a href="/"><img src={mainLogo} className="logo" ></img></a>
                 <a className="menu-item" href="/shop">SHOP</a>
-                <a className="menu-item">HOW IT WORKS</a>
+                <a className="menu-item" href="/how-it-works">HOW IT WORKS</a>
                 <a className="menu-item">COMMUNITY</a>
                 <div className="buffer"></div>
                 <img src={searchImg} className="header-icon" ></img>

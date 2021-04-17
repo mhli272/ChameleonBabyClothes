@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from "react-router-dom";
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+//import 'bootstrap/dist/css/bootstrap.min.css';
 import './components/HorizontalScroll/HorizontalScroll.css'
 import babyclothesImg from'./images/babyclothes.jpg';
 import signupImg from'./images/signup-button.png';
@@ -19,6 +19,8 @@ import Navbar from './components/Navbar/Navbar.js';
 
 
 export class Main extends React.Component {
+
+
   render() {
     return (
 
@@ -80,8 +82,6 @@ export class Main extends React.Component {
 </div>
 
 </div>
-
-
 
 </fragment>
         

@@ -105,7 +105,6 @@ export class Shop extends React.Component {
           age: "1-2 months",
           type: "Tops"
         }
-
       ],
 
       //flag = 1 means show, flag = 0 means dont show
@@ -508,7 +507,6 @@ export class Shop extends React.Component {
 
 
         {/*test button*/}
-
 
 
 

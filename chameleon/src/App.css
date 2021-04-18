@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+
 .flex-container-main {
   display: flex;
   background: #F9F9F9;
@@ -136,10 +138,9 @@
   font-weight: 640;
 }
 
-
-
-
-
+.group label{
+  font-family: 'DM Sans', sans-serif;
+}
 
 .App {
   text-align: center;

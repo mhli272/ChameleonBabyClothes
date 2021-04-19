@@ -17,7 +17,19 @@ import sanitationImg from './images/sanitation-button.png';
 
 import Navbar from './components/Navbar/Navbar.js';
 
+var flagTops = 0;
+var flagDresses = 0;
+var flagOnesies = 0;
+var flagBottoms = 0;
+var flagShoes = 0;
+var flagAccessories = 0;
 
+var flag12 = 0;
+var flag34 = 0;
+var flag56 = 0;
+var flag78 = 0;
+var flag910 = 0;
+var flag1112 = 0;
 
 export class Shop extends React.Component {
 
@@ -107,320 +119,180 @@ export class Shop extends React.Component {
         }
       ],
 
-      //flag = 1 means show, flag = 0 means dont show
+      //flag = 1 means checked, flag = 0 means unchecked
 
-      flagTops: 1,
-      flagDresses: 1,
-      flagOnesies: 1,
-      flagBottoms: 1,
-      flagShoes: 1,
-      flagAccessories: 1,
+      
       clothingType: ['Tops', 'Dresses', 'Onesies', 'Bottoms', 'Shoes', 'Accessories'],
 
-      flag12: 1,
-      flag34: 1,
-      flag56: 1,
-      flag78: 1,
-      flag910: 1,
-      flag1112: 1,
       clothingAge: ['1-2 months', '3-4 months', '5-6 months', '7-8 months', '9-10 months', '11-12 months']
 
     }
   }
 
+  editTypeArray(){
+    var typeTemp = [];
+    if (flagTops == 0 && flagDresses == 0 && flagOnesies == 0 && flagBottoms == 0 && flagShoes == 0 && flagAccessories == 0){
+      typeTemp = ['Tops', 'Dresses', 'Onesies', 'Bottoms', 'Shoes', 'Accessories'];
+    }else{
+      if(flagTops == 1)
+        typeTemp.push('Tops')
+      if (flagDresses == 1)
+        typeTemp.push('Dresses')
+      if (flagOnesies == 1)
+        typeTemp.push('Onesies')
+      if (flagBottoms == 1)
+        typeTemp.push('Bottoms')
+      if (flagShoes == 1)
+        typeTemp.push('Shoes')
+      if (flagAccessories == 1)
+        typeTemp.push('Accessories')
+    }
+    this.setState({clothingType: typeTemp})
+  }
+
+
+  editAgeArray() {
+    var typeAge = [];
+    if (flag12 == 0 && flag34 == 0 && flag56 == 0 && flag78 == 0 && flag910 == 0 && flag1112 == 0) {
+      typeAge = ['1-2 months', '3-4 months', '5-6 months', '7-8 months', '9-10 months', '11-12 months'];
+    } else {
+      if (flag12 == 1)
+        typeAge.push('1-2 months')
+      if (flag34 == 1)
+        typeAge.push('3-4 months')
+      if (flag56 == 1)
+        typeAge.push('5-6 months')
+      if (flag78 == 1)
+        typeAge.push('7-8 months')
+      if (flag910 == 1)
+        typeAge.push('9-10 months')
+      if (flag1112 == 1)
+        typeAge.push('11-12 months')
+    }
+    this.setState({ clothingAge: typeAge })
+  }
+  
   //type filter functions
   changeParamTops() {
-    
-    if (this.state.flagTops == 1) {
-      if (this.state.clothingType.length == 6) {
-        console.log(this.state.clothingType.length);
-        //get rid of everything but this item
-        this.setState({ flagDresses: 0, flagOnesies: 0, flagBottoms: 0, flagShoes: 0, flagAccessories: 0})
-        this.setState({clothingType: ['Tops']})
-      } else if (this.state.clothingType.length == 1){
-        //This is the only box that is checked, and you are unchecking it, so you want to show everything again
-        this.setState({ flagDresses: 1, flagOnesies: 1, flagBottoms: 1, flagShoes: 1, flagAccessories: 1 })
-        this.setState({ clothingType: ['Tops', 'Dresses', 'Onesies', 'Bottoms', 'Shoes', 'Accessories']})
-      }else{
-        this.setState({ flagTops: 0 })
-        var temp = this.state.clothingType;
-        var index = temp.indexOf('Tops');
-        if (index != -1) {
-          temp.splice(index, 1)
-          this.setState({ clothingType: temp })
-        }
-      }
+    if (flagTops == 1) {
+      flagTops = 0;
     }
-    else if (this.state.flagTops == 0) {
-      this.setState({ flagTops: 1 })
-      var temp = this.state.clothingType;
-      temp.push('Tops');
+    else{
+      flagTops = 1;
     }
+    this.editTypeArray();
   }
 
   changeParamDresses() {
-    if (this.state.flagDresses == 1) {
-      if (this.state.clothingType.length == 6) {
-        console.log(this.state.clothingType.length);
-        //get rid of everything but this item
-        this.setState({ flagTops: 0, flagOnesies: 0, flagBottoms: 0, flagShoes: 0, flagAccessories: 0 })
-        this.setState({ clothingType: ['Dresses'] })
-      } else if (this.state.clothingType.length == 1) {
-        //This is the only box that is checked, and you are unchecking it, so you want to show everything again
-        this.setState({ flagTops: 1, flagOnesies: 1, flagBottoms: 1, flagShoes: 1, flagAccessories: 1 })
-        this.setState({ clothingType: ['Tops', 'Dresses', 'Onesies', 'Bottoms', 'Shoes', 'Accessories'] })
-      } else {
-        this.setState({ flagDresses: 0 })
-        var temp = this.state.clothingType;
-        var index = temp.indexOf('Dresses');
-        if (index != -1) {
-          temp.splice(index, 1)
-          this.setState({ clothingType: temp })
-        }
-      }
+    if (flagDresses == 1) {
+      flagDresses = 0;
     }
-
-    else if (this.state.flagDresses == 0) {
-      this.setState({ flagDresses: 1 })
-      var temp = this.state.clothingType;
-      temp.push('Dresses');
+    else {
+      flagDresses = 1;
     }
+    this.editTypeArray();
   }
 
   changeParamOnesies() {
-    if (this.state.flagOnesies == 1) {
-      if (this.state.clothingType.length == 6) {
-        console.log(this.state.clothingType.length);
-        //get rid of everything but this item
-        this.setState({ flagDresses: 0, flagTops: 0, flagBottoms: 0, flagShoes: 0, flagAccessories: 0 })
-        this.setState({ clothingType: ['Onesies'] })
-      } else if (this.state.clothingType.length == 1) {
-        //This is the only box that is checked, and you are unchecking it, so you want to show everything again
-        this.setState({ flagDresses: 1, flagTops: 1, flagBottoms: 1, flagShoes: 1, flagAccessories: 1 })
-        this.setState({ clothingType: ['Tops', 'Dresses', 'Onesies', 'Bottoms', 'Shoes', 'Accessories'] })
-      } else {
-        this.setState({ flagOnesies: 0 })
-        var temp = this.state.clothingType;
-        var index = temp.indexOf('Onesies');
-        if (index != -1) {
-          temp.splice(index, 1)
-          this.setState({ clothingType: temp })
-        }
-      }
+    if (flagOnesies == 1) {
+      flagOnesies = 0;
     }
-
-    else if (this.state.flagOnesies == 0) {
-      this.setState({ flagOnesies: 1 })
-      var temp = this.state.clothingType;
-      temp.push('Onesies');
+    else {
+      flagOnesies = 1;
     }
+    this.editTypeArray();
   }
 
   changeParamBottoms() {
-    if (this.state.flagBottoms == 1) {
-      if (this.state.clothingType.length == 6) {
-        console.log(this.state.clothingType.length);
-        //get rid of everything but this item
-        this.setState({ flagDresses: 0, flagOnesies: 0, flagTops: 0, flagShoes: 0, flagAccessories: 0 })
-        this.setState({ clothingType: ['Bottoms'] })
-      } else if (this.state.clothingType.length == 1) {
-        //This is the only box that is checked, and you are unchecking it, so you want to show everything again
-        this.setState({ flagDresses: 1, flagOnesies: 1, flagTops: 1, flagShoes: 1, flagAccessories: 1 })
-        this.setState({ clothingType: ['Tops', 'Dresses', 'Onesies', 'Bottoms', 'Shoes', 'Accessories'] })
-      } else {
-        this.setState({ flagBottoms: 0 })
-        var temp = this.state.clothingType;
-        var index = temp.indexOf('Bottoms');
-        if (index != -1) {
-          temp.splice(index, 1)
-          this.setState({ clothingType: temp })
-        }
-      }
+    if (flagBottoms == 1) {
+      flagBottoms = 0;
     }
-
-    else if (this.state.flagBottoms == 0) {
-      this.setState({ flagBottoms: 1 })
-      var temp = this.state.clothingType;
-      temp.push('Bottoms');
+    else {
+      flagBottoms = 1;
     }
+    this.editTypeArray();
   }
 
   changeParamAccessories() {
-    if (this.state.flagAccessories == 1) {
-      if (this.state.clothingType.length == 6) {
-        console.log(this.state.clothingType.length);
-        //get rid of everything but this item
-        this.setState({ flagDresses: 0, flagOnesies: 0, flagBottoms: 0, flagShoes: 0, flagTops: 0 })
-        this.setState({ clothingType: ['Accessories'] })
-      } else if (this.state.clothingType.length == 1) {
-        //This is the only box that is checked, and you are unchecking it, so you want to show everything again
-        this.setState({ flagDresses: 1, flagOnesies: 1, flagBottoms: 1, flagShoes: 1, flagTops: 1 })
-        this.setState({ clothingType: ['Tops', 'Dresses', 'Onesies', 'Bottoms', 'Shoes', 'Accessories'] })
-      } else {
-        this.setState({ flagAccessories: 0 })
-        var temp = this.state.clothingType;
-        var index = temp.indexOf('Accessories');
-        if (index != -1) {
-          temp.splice(index, 1)
-          this.setState({ clothingType: temp })
-        }
-      }
+    if (flagAccessories == 1) {
+      flagAccessories = 0;
     }
-
-    else if (this.state.flagAccessories == 0) {
-      this.setState({ flagAccessories: 1 })
-      var temp = this.state.clothingType;
-      temp.push('BottAccessoriesoms');
+    else {
+      flagAccessories = 1;
     }
+    this.editTypeArray();
   }
   
   changeParamShoes() {
-    if (this.state.flagShoes == 1) {
-      if (this.state.clothingType.length == 6) {
-        console.log(this.state.clothingType.length);
-        //get rid of everything but this item
-        this.setState({ flagDresses: 0, flagOnesies: 0, flagBottoms: 0, flagTops: 0, flagAccessories: 0 })
-        this.setState({ clothingType: ['Shoes'] })
-      } else if (this.state.clothingType.length == 1) {
-        //This is the only box that is checked, and you are unchecking it, so you want to show everything again
-        this.setState({ flagDresses: 1, flagOnesies: 1, flagBottoms: 1, flagTops: 1, flagAccessories: 1 })
-        this.setState({ clothingType: ['Tops', 'Dresses', 'Onesies', 'Bottoms', 'Shoes', 'Accessories'] })
-      } else {
-        this.setState({ flagShoes: 0 })
-        var temp = this.state.clothingType;
-        var index = temp.indexOf('Shoes');
-        if (index != -1) {
-          temp.splice(index, 1)
-          this.setState({ clothingType: temp })
-        }
-      }
+    if (flagShoes == 1) {
+      flagShoes = 0;
     }
-
-    else if (this.state.flagShoes == 0) {
-      this.setState({ flagShoes: 1 })
-      var temp = this.state.clothingType;
-      temp.push('Shoes');
+    else {
+      flagShoes = 1;
     }
+    this.editTypeArray();
   }
 
   //age filter functions
   changeParam12months() {
-    if (this.state.flag12 == 1) {
-      if (this.state.clothingAge.length == 6) {
-        console.log(this.state.clothingAge.length);
-        //get rid of everything but this item
-        this.setState({ flag34: 0, flag56: 0, flag78: 0, flag910: 0, flag1112: 0})
-        this.setState({ clothingAge: ['1-2 months'] })
-      } else if (this.state.clothingAge.length == 1) {
-        //This is the only box that is checked, and you are unchecking it, so you want to show everything again
-        this.setState({ flag34: 1, flag56: 1, flag78: 1, flag910: 1, flag1112: 1})
-        this.setState({ clothingAge: ['1-2 months', '3-4 months', '5-6 months', '7-8 months', '9-10 months', '11-12 months'] })
-      } else{
-        this.setState({ flag12: 0 })
-        var temp = this.state.clothingAge;
-        var index = temp.indexOf('1-2 months');
-        if (index != -1) {
-          temp.splice(index, 1)
-          this.setState({ clothingAge: temp })
-        }
-      }
+    if (flag12 == 1) {
+      flag12 = 0;
     }
-    else if (this.state.flag12 == 0) {
-      this.setState({ flag12: 1 })
-      var temp = this.state.clothingAge;
-      temp.push('1-2 months');
+    else {
+      flag12 = 1;
     }
+    this.editAgeArray();
   }
 
   changeParam34months() {
-    if (this.state.flag34 == 1) {
-      this.setState({ flag34: 0 })
-      var temp = this.state.clothingAge;
-      var index = temp.indexOf('3-4 months');
-      if (index != -1) {
-        temp.splice(index, 1)
-        this.setState({ clothingAge: temp })
-      }
+    if (flag34 == 1) {
+      flag34 = 0;
     }
-
-    else if (this.state.flag34 == 0) {
-      this.setState({ flag34: 1 })
-      var temp = this.state.clothingAge;
-      temp.push('3-4 months');
+    else {
+      flag34 = 1;
     }
+    this.editAgeArray();
   }
 
   changeParam56months() {
-    if (this.state.flag56 == 1) {
-      this.setState({ flag56: 0 })
-      var temp = this.state.clothingAge;
-      var index = temp.indexOf('5-6 months');
-      if (index != -1) {
-        temp.splice(index, 1)
-        this.setState({ clothingAge: temp })
-      }
+    if (flag56 == 1) {
+      flag56 = 0;
     }
-
-    else if (this.state.flag56 == 0) {
-      this.setState({ flag56: 1 })
-      var temp = this.state.clothingAge;
-      temp.push('5-6 months');
+    else {
+      flag56 = 1;
     }
+    this.editAgeArray();
   }
 
   changeParam78months() {
-    if (this.state.flag78 == 1) {
-      this.setState({ flag78: 0 })
-      var temp = this.state.clothingAge;
-      var index = temp.indexOf('7-8 months');
-      if (index != -1) {
-        temp.splice(index, 1)
-        this.setState({ clothingAge: temp })
-      }
+    if (flag78 == 1) {
+      flag78 = 0;
     }
-
-    else if (this.state.flag78 == 0) {
-      this.setState({ flag78: 1 })
-      var temp = this.state.clothingAge;
-      temp.push('7-8 months');
+    else {
+      flag78 = 1;
     }
+    this.editAgeArray();
   }
 
   changeParam910months() {
-    if (this.state.flag910 == 1) {
-      this.setState({ flag910: 0 })
-      var temp = this.state.clothingAge;
-      var index = temp.indexOf('9-10 months');
-      if (index != -1) {
-        temp.splice(index, 1)
-        this.setState({ clothingAge: temp })
-      }
+    if (flag910 == 1) {
+      flag910 = 0;
     }
-
-    else if (this.state.flag910 == 0) {
-      this.setState({ flag910: 1 })
-      var temp = this.state.clothingAge;
-      temp.push('9-10 months');
+    else {
+      flag910 = 1;
     }
+    this.editAgeArray();
   }
 
 
   changeParam1112months() {
-    if (this.state.flag1112 == 1) {
-      this.setState({ flag1112: 0 })
-      var temp = this.state.clothingAge;
-      var index = temp.indexOf('11-12 months');
-      if (index != -1) {
-        temp.splice(index, 1)
-        this.setState({ clothingAge: temp })
-      }
+    if (flag1112 == 1) {
+      flag1112 = 0;
     }
-
-    else if (this.state.flag1112 == 0) {
-      this.setState({ flag1112: 1 })
-      var temp = this.state.clothingAge;
-      temp.push('11-12 months');
+    else {
+      flag1112 = 1;
     }
+    this.editAgeArray();
   }
 
   render() {
@@ -436,12 +308,6 @@ export class Shop extends React.Component {
         </div>
 
         <div class="buffer"> </div>
-
-
-
-        {/*test*/}
-
-
 
         <div class="flex-container-shop">
 
@@ -505,7 +371,7 @@ export class Shop extends React.Component {
 
         </div>
 
-
+        
         {/*test button*/}
 
 

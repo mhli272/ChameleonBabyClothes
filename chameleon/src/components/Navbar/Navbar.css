@@ -75,6 +75,7 @@
     clear:right;
     transition: 0.3s;
     cursor: pointer;
+
 }
 
 .header-icon:hover {
@@ -95,6 +96,8 @@
     color: #686868;
     cursor: pointer;
     /*{text-decoration: 'none';} */
+    text-decoration: none;
+
 }
 
 .menu-item:hover {
@@ -115,3 +118,31 @@
 nav {
     padding-left: 40px;
 }
+
+/*.flex-container-nav {
+
+    background: white;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+    box-shadow: 0px 0px 8px 2px #808080;
+}
+
+.flex-leftChild-nav{
+  position: relative;
+  flex: 1;
+
+}
+
+.flex-rightChild-nav{
+    display: flex;
+   flex-direction: row;
+   justify-content: flex-end;
+   align-items: flex-start;
+
+}*/

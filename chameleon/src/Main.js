@@ -21,6 +21,7 @@ import community3 from './images/community3.png';
 import community4 from './images/community4.png';
 
 
+import Footer from './components/Footer/Footer.js';
 import Navbar from './components/Navbar/Navbar.js';
 
 
@@ -148,7 +149,10 @@ export class Main extends React.Component {
   </div>
 </div>
 
-
+{/*footer*/}
+<div>
+  <Footer></Footer>
+</div>
 
 
 </fragment>

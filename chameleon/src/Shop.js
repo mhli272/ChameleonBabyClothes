@@ -13,6 +13,7 @@ import clothing4 from './images/clothing4.png';
 import shopall from './images/shopall.png';
 import washingmachines from './images/washingmachines.png';
 import sanitationImg from './images/sanitation-button.png';
+import { Redirect } from "react-router-dom";
 
 
 import Navbar from './components/Navbar/Navbar.js';
@@ -37,86 +38,118 @@ export class Shop extends React.Component {
     super(props);
     this.state = {
       items: [
-        {
-          imgPath: clothing1,
-          age: "5-6 months",
-          type: "Dresses"
-        },
-        {
-          imgPath: clothing2,
-          age: "3-4 months",
-          type: "Onesies"
-        },
-        {
-          imgPath: clothing3,
-          age: "1-2 months",
-          type: "Tops"
-        },
-        {
-          imgPath: clothing4,
-          age: "1-2 months",
-          type: "Tops"
-        },
-        {
-          imgPath: clothing1,
-          age: "5-6 months",
-          type: "Dresses"
-        },
-        {
-          imgPath: clothing2,
-          age: "3-4 months",
-          type: "Onesies"
-        },
-        {
-          imgPath: clothing3,
-          age: "1-2 months",
-          type: "Tops"
-        },
-        {
-          imgPath: clothing4,
-          age: "1-2 months",
-          type: "Tops"
-        },
-        {
-          imgPath: clothing1,
-          age: "5-6 months",
-          type: "Dresses"
-        },
-        {
-          imgPath: clothing2,
-          age: "3-4 months",
-          type: "Onesies"
-        },
-        {
-          imgPath: clothing3,
-          age: "1-2 months",
-          type: "Tops"
-        },
-        {
-          imgPath: clothing4,
-          age: "1-2 months",
-          type: "Tops"
-        },
-        {
-          imgPath: clothing1,
-          age: "5-6 months",
-          type: "Dresses"
-        },
-        {
-          imgPath: clothing2,
-          age: "3-4 months",
-          type: "Onesies"
-        },
-        {
-          imgPath: clothing3,
-          age: "1-2 months",
-          type: "Tops"
-        },
-        {
-          imgPath: clothing4,
-          age: "1-2 months",
-          type: "Tops"
-        }
+      {
+        id: 1,
+        imgPath: clothing1,
+        age: "5-6 months",
+        type: "Dresses",
+        name: "Floral Dress"
+      },
+      {
+        id: 2,
+        imgPath: clothing2,
+        age: "3-4 months",
+        type: "Onesies",
+        name: "Out and About Romper"
+      },
+      {
+        id: 3,
+        imgPath: clothing3,
+        age: "1-2 months",
+        type: "Tops",
+        name: "Fleece Jacket"
+      },
+      {
+        id: 4,
+        imgPath: clothing4,
+        age: "1-2 months",
+        type: "Tops",
+        name: "Soft Cotton Tee"
+      },
+      {
+        id: 5,
+        imgPath: clothing1,
+        age: "5-6 months",
+        type: "Dresses",
+        name: "Floral Dress",
+      },
+      {
+        id: 6,
+        imgPath: clothing2,
+        age: "3-4 months",
+        type: "Onesies",
+        name: "Out and About Romper"
+      },
+      {
+        id: 7,
+        imgPath: clothing3,
+        age: "1-2 months",
+        type: "Tops",
+        name: "Fleece Jacket"
+      },
+      {
+        id: 8,
+        imgPath: clothing4,
+        age: "1-2 months",
+        type: "Tops",
+        name: "Soft Cotton Tee"
+      },
+      {
+        id: 9,
+        imgPath: clothing1,
+        age: "5-6 months",
+        type: "Dresses",
+        name: "Floral Dress"
+      },
+      {
+        id: 10,
+        imgPath: clothing2,
+        age: "3-4 months",
+        type: "Onesies",
+        name: "Out and About Romper"
+      },
+      {
+        id: 11,
+        imgPath: clothing3,
+        age: "1-2 months",
+        type: "Tops",
+        name: "Fleece Jacket"
+      },
+      {
+        id: 12,
+        imgPath: clothing4,
+        age: "1-2 months",
+        type: "Tops",
+        name: "Soft Cotton Tee"
+      },
+      {
+        id: 13,
+        imgPath: clothing1,
+        age: "5-6 months",
+        type: "Dresses",
+        name: "Floral Dress"
+      },
+      {
+        id: 14,
+        imgPath: clothing2,
+        age: "3-4 months",
+        type: "Onesies",
+        name: "Out and About Romper"
+      },
+      {
+        id: 15,
+        imgPath: clothing3,
+        age: "1-2 months",
+        type: "Tops",
+        name: "Fleece Jacket"
+      },
+      {
+        id: 16,
+        imgPath: clothing4,
+        age: "1-2 months",
+        type: "Tops",
+        name: "Soft Cotton Tee"
+      }
       ],
 
       //flag = 1 means checked, flag = 0 means unchecked
@@ -295,7 +328,22 @@ export class Shop extends React.Component {
     this.editAgeArray();
   }
 
+  goToItemPage(id) {
+    for (var i=0; i<this.state.items.length; i++) {
+      if (this.state.items[i].id==id) {
+        sessionStorage.setItem('name', this.state.items[i].name)
+        this.setState({ redirect: "/Product" });
+        break;
+      }
+    }
+  }
+
   render() {
+
+    if (this.state.redirect) {
+      return <Redirect to={this.state.redirect} />
+    }
+
     return (
       <fragment>
 
@@ -364,7 +412,7 @@ export class Shop extends React.Component {
           <div class="flex-child-shop:first-child" >
             <div class="view-all">View All</div>
             {this.state.items.filter(item => this.state.clothingType.includes(item.type) && this.state.clothingAge.includes(item.age)).map(filteredItem =>
-            (<div class="card">
+            (<div class="card" onClick={() => this.goToItemPage(filteredItem.id)}>
               <img class="item" src={filteredItem.imgPath}></img>
             </div>))}
           </div>

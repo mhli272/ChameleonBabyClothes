@@ -21,6 +21,21 @@ import Navbar from './components/Navbar/Navbar.js';
 export class Main extends React.Component {
 
 
+  waitlistSignup(){
+    if (document.getElementById("waitlist").value!="") {
+      var modal = document.getElementById("myModal");
+      modal.style.display = "block";
+
+    }
+  }
+
+  closeModal(){
+    var modal = document.getElementById("myModal");
+    modal.style.display = "none";
+  }
+
+
+
   render() {
     return (
 
@@ -47,7 +62,18 @@ export class Main extends React.Component {
   <div class="flex-child main-background" >
       <div className="main-title">Renting baby clothes has never been easier.</div>
       <div className="main-subtitle">Join Chameleon today and choose from 20+ styles.</div>
-      <div><img src={signupImg} className="sign-up-button"></img></div>
+      <input id="waitlist" type="text" className="email-input" placeholder="Type your email here..."></input>
+      <div><img src={signupImg} className="sign-up-button" onClick={this.waitlistSignup}></img></div>
+      {/* The Modal --> */}
+      <div id="myModal" class="modal">
+
+        {/* Modal content --> */}
+        <div class="modal-content">
+          <span class="close" onClick={this.closeModal}>&times;</span>
+          <p>Thank you for signing up for our waitlist! We can't wait to bring you our amazing products soon!</p>
+        </div>
+
+      </div>
   </div>
 
 </div>

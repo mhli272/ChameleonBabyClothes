@@ -23,8 +23,23 @@
   }
 
   .item:hover {
-      opacity: 60%;
+    opacity: 60%;
   }
+
+  .post {
+    width: 80%;
+    height: 400px;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  .post-card {
+    margin-left: 50px;
+    display: inline-block;
+  }
+  .post:hover {
+    opacity: 60%;
+  }
+
 
   .scrolling-wrapper::-webkit-scrollbar {
     display: none;

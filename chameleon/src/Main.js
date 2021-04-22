@@ -13,6 +13,12 @@ import clothing4 from'./images/clothing4.png';
 import shopall from'./images/shopall.png';
 import washingmachines from'./images/washingmachines.png';
 import sanitationImg from'./images/sanitation-button.png';
+import brandImg from './images/OurBrands.png';
+import wasteImg from './images/wasteImage.png';
+import community1 from './images/community1.png';
+import community2 from './images/community2.png';
+import community3 from './images/community3.png';
+import community4 from './images/community4.png';
 
 
 import Navbar from './components/Navbar/Navbar.js';
@@ -95,19 +101,55 @@ export class Main extends React.Component {
 {/*sanitation*/}
 <div class="flex-container-sanitation">
 
-<div class="flex-child" >
+  <div class="flex-child" >
     <div className="sanitation-title">Clean and safe.</div>
     <div className="sanitation-subtitle">We make sure every piece undergoes an extensive cleaning process as it gets returned by our customers.</div>
     <div><img src={sanitationImg} className="sign-up-button"></img></div>
+  </div>
+
+  <div className="sanitation-buffer"></div>
+
+  <div class="flex-child">
+  <img src={washingmachines} ></img>
 </div>
 
-<div className="sanitation-buffer"></div>
-
-<div class="flex-child">
-<img src={washingmachines} ></img>
 </div>
 
+{/*Our Brands*/}
+
+<div class="brand">
+  <img src={brandImg}></img>
 </div>
+
+{/*Textile Waste*/}
+
+<div class="flex-container-waste">
+
+  <div class="flex-child">
+    <img src={wasteImg} ></img>
+  </div>
+
+
+  <div class="flex-child">
+    <div className="waste-title">Over 15 million tons of textile waste is generated annually in the United States.</div>
+    <div className="waste-subtitle">Join Chameleon today. It's the sustainable choice for you, your baby, and the planet. Read more about our impact here.</div>
+  </div>
+</div>
+
+{/*Community*/}
+<div className="new-arrivals">
+  <div className="new-arrivals-title">Community</div>
+
+  <div class="scrolling-wrapper">
+    <div class="post-card"><img class="post" src={community1}></img></div>
+    <div class="post-card"><img class="post" src={community2}></img></div>
+    <div class="post-card"><img class="post" src={community3}></img></div>
+    <div class="post-card"><img class="post" src={community4}></img></div>
+  </div>
+</div>
+
+
+
 
 </fragment>
         

@@ -90,6 +90,37 @@
   width: 80%;
 }
 
+.brand{
+  margin-bottom: 50px;
+  margin-top: 150px;
+  text-align: center;
+}
+
+.flex-container-waste {
+  display: flex;
+  background: #E6F7F4;
+  justify-content: space-between;
+}
+
+.waste-title {
+  font-size: 35px;
+  font-weight: 640;
+  margin-bottom: 20px;
+  margin-top: 100px;
+  margin-right: 100px;
+  color: #348B7C;
+  text-align: right;
+}
+
+.waste-subtitle {
+  font-size: 20px;
+  font-weight: 640;
+  margin-bottom: 30px;
+  margin-right: 100px;
+  color: #348B7C;
+  text-align: right;
+}
+
 .sign-up-button {
   transition: 0.3s;
   cursor: pointer;

@@ -1,47 +1,46 @@
-  .h2 {
-    color: white;
-  }
-  
-  .scrolling-wrapper {
-    overflow-x: scroll;
-    overflow-y: hidden;
-    white-space: nowrap;
-    margin-bottom: 20px;
-    -webkit-overflow-scrolling: touch;
-  }
-  
-  .card {
-    margin-right: 50px;
-    margin-left: 50px;
-    display: inline-block;
-  }
+.h2 {
+  color: white;
+}
 
-  .item {
-    height: 400px;
-    transition: 0.3s;
-    cursor: pointer;
-  }
+.scrolling-wrapper {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  margin-bottom: 20px;
+  -webkit-overflow-scrolling: touch;
+}
 
-  .item:hover {
-    opacity: 60%;
-  }
+.card {
+  margin-right: 50px;
+  margin-left: 50px;
+  display: inline-block;
+}
 
-  .post {
-    width: 80%;
-    height: 400px;
-    transition: 0.3s;
-    cursor: pointer;
-  }
-  .post-card {
-    margin-left: 50px;
-    display: inline-block;
-  }
-  .post:hover {
-    opacity: 60%;
-  }
+.item {
+  height: 400px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.item:hover {
+  opacity: 60%;
+}
+
+.post {
+  width: 80%;
+  height: 400px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.post-card {
+  margin-left: 50px;
+  display: inline-block;
+}
+.post:hover {
+  opacity: 60%;
+}
 
 
-  .scrolling-wrapper::-webkit-scrollbar {
-    display: none;
-  }
-
+.scrolling-wrapper::-webkit-scrollbar {
+  display: none;
+}

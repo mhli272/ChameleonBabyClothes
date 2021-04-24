@@ -1,22 +1,23 @@
 import React, { Component } from 'react';
 import { MenuItems } from "./MenuItems";
 import "./Navbar.css";
-import mainLogo from'../../images/logo.png';
-import searchImg from'../../images/search.jpg';
-import cartImg from'../../images/cart.jpg';
-import userImg from'../../images/user.jpg';
+import mainLogo from '../../images/logo.png';
+import searchImg from '../../images/search.jpg';
+import cartImg from '../../images/cart.jpg';
+import userImg from '../../images/user.jpg';
 import { withRouter } from 'react-router-dom'
 
 
 
-class Navbar extends Component{
 
-    render(){
+class Navbar extends Component {
+
+    render() {
 
 
-        
 
-        return(
+
+        return (
             <nav className="NavbarItems">
             
                 <a href="/"><img src={mainLogo} className="logo" ></img></a>

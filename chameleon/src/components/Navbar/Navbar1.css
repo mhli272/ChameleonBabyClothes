@@ -71,8 +71,6 @@
     height: 25px;
     margin-left: 10px;
     margin-right: 10px;
-    float:right;
-    clear:right;
     transition: 0.3s;
     cursor: pointer;
 }
@@ -114,4 +112,11 @@
 
 nav {
     padding-left: 40px;
+}
+
+.alignleft {
+	float: left;
+}
+.alignright {
+	float: right;
 }

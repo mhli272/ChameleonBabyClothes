@@ -219,9 +219,45 @@
   cursor: pointer;
 }
 
+.product-header-buffer {
+  margin: 100px;
+}
+
+.product-plan-flex-container {
+  display: flex;
+}
+
+.product-plan-flex-child {
+  position: relative;
+  flex: 1;
+  align-content: center;
+  text-align: center;
+}
+
+.flex-container-product {
+  display: flex;
+  background: #FFFFFF;
+}  
+
+.flex-child-product {
+  position: relative;
+  flex: 1;
+  margin-left: 75px;
+}  
+
+.flex-child-product:first-child {
+  margin-right: 100px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 15em;
+}
+
+
+
 .group label{
   font-family: 'DM Sans', sans-serif;
 }
+
 
 .App {
   text-align: center;

@@ -40,4 +40,45 @@
   vertical-align: middle;
   align-items: center;
   margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.email-input {
+  border: 1px solid #BDBDBD;
+  box-sizing: border-box;
+  border-radius: 10px;
+  width: 250px;
+  height: 50px;
+  margin-bottom: 20px;
+  padding-left: 15px;
+  color: #828282;
+  font-size: 16px;
+  margin-left: 27px;
+  margin-top: 10px;
+}
+
+.sign-up-button { 
+  margin-top: 10px;
+  position:absolute;
+  margin-left: -7px;
+  height: 50px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.sign-up-button:hover {
+  opacity: 50%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.pText{
+  color: black;
+  text-align: left;
 }

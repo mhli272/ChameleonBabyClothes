@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { MenuItems } from "./MenuItems";
 import "./Navbar.css";
-import mainLogo from '../../images/logo.png';
+import mainLogo from '../../images/chameleonlogo.png';
 import searchImg from '../../images/search.jpg';
 import cartImg from '../../images/cart.jpg';
 import userImg from '../../images/user.jpg';

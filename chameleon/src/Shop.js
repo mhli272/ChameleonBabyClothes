@@ -22,7 +22,7 @@ import washingmachines from './images/washingmachines.png';
 import sanitationImg from './images/sanitation-button.png';
 import { Redirect } from "react-router-dom";
 
-
+import Footer from './components/Footer/Footer.js';
 import Navbar from './components/Navbar/Navbar.js';
 
 var flagTops = 0;
@@ -461,7 +461,11 @@ export class Shop extends React.Component {
 
         </div>
 
-        
+        {/*footer*/}
+        <div>
+          <Footer></Footer>
+        </div>
+
         {/*test button*/}
 
 

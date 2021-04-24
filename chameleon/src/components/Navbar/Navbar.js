@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import { MenuItems } from "./MenuItems";
 import "./Navbar.css";
 import mainLogo from '../../images/chameleonlogo.png';
-import searchImg from '../../images/search.jpg';
+import heartImg from '../../images/heart_outline.png';
 import cartImg from '../../images/cart.jpg';
 import userImg from '../../images/user.jpg';
+
 import { withRouter } from 'react-router-dom'
 
 
@@ -25,7 +26,7 @@ class Navbar extends Component {
                 <a className="menu-item" href="/how-it-works">HOW IT WORKS</a>
                 <a className="menu-item">COMMUNITY</a>
                 <div className="buffer"></div>
-                <img src={searchImg} className="header-icon" ></img>
+                <img src={heartImg} className="header-icon" ></img>
                 <img src={cartImg} className="header-icon" ></img>
                 <img src={userImg} className="header-icon" ></img>
                 <div className="endbuffer"></div>

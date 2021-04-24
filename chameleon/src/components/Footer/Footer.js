@@ -42,8 +42,8 @@ class Footer extends Component {
                     <a class="footer-body" href="https://www.instagram.com/chameleonbabyclothes/"><img class="icon" src={tw}></img></a>
                     <a class="footer-body" href="https://www.instagram.com/chameleonbabyclothes/"><img class="icon" src={fb}></img></a>
                     <div class="footer-header">Stay Connected</div>
-                    <input id="footer-waitlist" type="text" className="email-input" placeholder="Type your email here..."></input>
-                    <img src={submit} className="sign-up-button" onClick={this.waitlistSignup}></img>
+                    <input id="footer-waitlist" type="text" className="footer-email-input" placeholder="Type your email here..."></input>
+                    <img src={submit} className="footer-sign-up-button" onClick={this.waitlistSignup}></img>
                     {/* The Modal --> */}
                     <div id="footer-myModal" class="modal">
                         {/* Modal content --> */}

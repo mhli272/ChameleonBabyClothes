@@ -388,13 +388,9 @@ export class Shop extends React.Component {
 
     return (
       <fragment>
-
-
-
-
         {/*header*/}
         <div>
-          <Navbar ></Navbar>
+          <Navbar></Navbar>
         </div>
 
         <div class="buffer"> </div>

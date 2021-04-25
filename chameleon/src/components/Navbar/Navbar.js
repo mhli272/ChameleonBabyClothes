@@ -24,9 +24,9 @@ class Navbar extends Component {
                 <a href="/"><img src={mainLogo} className="logo" ></img></a>
                 <a className="menu-item" href="/shop">SHOP</a>
                 <a className="menu-item" href="/how-it-works">HOW IT WORKS</a>
-                <a className="menu-item">COMMUNITY</a>
+                <a className="menu-item" href="/community">COMMUNITY</a>
                 <div className="buffer"></div>
-                <img src={heartImg} className="header-icon" ></img>
+                <a href="/favorites"><img src={heartImg} className="header-icon" ></img></a>
                 <img src={cartImg} className="header-icon" ></img>
                 <img src={userImg} className="header-icon" ></img>
                 <div className="endbuffer"></div>

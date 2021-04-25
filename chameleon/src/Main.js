@@ -53,7 +53,7 @@ export class Main extends React.Component {
  
  {/*header*/}
   <div>
-  <Navbar ></Navbar>
+  <Navbar></Navbar>
   </div> 
 
   <div class="buffer"> </div>

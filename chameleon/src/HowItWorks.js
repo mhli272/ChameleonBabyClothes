@@ -47,7 +47,7 @@ export class HowItWorks extends React.Component {
 
                 {/*Sanitation*/}
                 <div class="rectangle">
-                    <div class="buffer"> </div>
+                    <div class="HIW-buffer"> </div>
                     <div class="title">Sanitation</div>
                     <div className="flex-container-HIW">
                         <div class="flex-child-bullets">

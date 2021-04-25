@@ -51,25 +51,28 @@ export class HowItWorks extends React.Component {
                     <div class="title">Sanitation</div>
                     <div className="flex-container-HIW">
                         <div class="flex-child-bullets">
-                            <div>
+                            <div class="bulletList">
                                 <span class="bullets"><img src={circleGreen}></img></span>
                                 <span class="bullet-text">Inspect for staining and to see if any items need to be retired.</span>
                             </div>
-                            <div>
+                            <div class="bulletList">
                                 <span class="bullets"><img src={circlePink}></img></span>
                                 <span class="bullet-text">Organic laundry detergent appropriate for sensitive skin.</span>
                             </div>
-                            <div>
+                            <div class="bulletList">
                                 <span class="bullets"><img src={circleYellow}></img></span>
                                 <span class="bullet-text">Every item is steamed before getting prepared for another family.</span>
                             </div>
                         </div>
-                        <div class="flex-child-HIW">
-                            <div><img src={washingMachines} class="washingMachines"></img></div>
+                        <div class="flex-child-sanitation-img">
+                            <img src={washingMachines} class="washingMachines"></img>
                         </div>
                     </div>  
                 </div>
-s
+                
+                {/*Pricing*/}
+                <div class="title">Pricing</div>
+
                 {/*footer*/}
                 <div>
                     <Footer></Footer>

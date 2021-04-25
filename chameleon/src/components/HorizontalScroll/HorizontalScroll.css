@@ -26,6 +26,11 @@
   opacity: 60%;
 }
 
+.no-hover-item{
+  height: 400px;
+  transition: 0.3s;
+}
+
 .post {
   width: 80%;
   height: 400px;

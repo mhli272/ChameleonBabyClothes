@@ -90,13 +90,13 @@ export class Main extends React.Component {
   <div className="new-arrivals-title">New arrivals</div>
 
   <div class="scrolling-wrapper">
-    <div class="card"><img class="item" src={clothing1}></img></div>
-    <div class="card"><img class="item" src={clothing2}></img></div>
-    <div class="card"><img class="item" src={clothing3}></img></div>
-    <div class="card"><img class="item" src={clothing4}></img></div>
+    <div class="card"><img class="no-hover-item" src={clothing1}></img></div>
+    <div class="card"><img class="no-hover-item" src={clothing2}></img></div>
+    <div class="card"><img class="no-hover-item" src={clothing3}></img></div>
+    <div class="card"><img class="no-hover-item" src={clothing4}></img></div>
   </div>
 
-  <div><img src={shopall} className="shop-all"></img></div>
+  <div><a href="/shop"><img src={shopall} className="shop-all"></img></a></div>
 </div>    
         
 {/*sanitation*/}
@@ -105,7 +105,7 @@ export class Main extends React.Component {
   <div class="flex-child" >
     <div className="sanitation-title">Clean and safe.</div>
     <div className="sanitation-subtitle">We make sure every piece undergoes an extensive cleaning process as it gets returned by our customers.</div>
-    <div><img src={sanitationImg} className="sign-up-button"></img></div>
+    <div><a href="/how-it-works"><img src={sanitationImg} className="sign-up-button"></img></a></div>
   </div>
 
   <div className="sanitation-buffer"></div>

@@ -1,0 +1,224 @@
+.product-header-buffer {
+    margin: 254px;
+  }
+  
+  .product-heart-size {
+    height: 30px;
+  }
+  
+  .product-plan-flex-container {
+    display: flex;
+  }
+  
+  .product-plan-flex-child {
+    position: relative;
+    flex: 1;
+    text-align: center;
+    background-color: #828282;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    transition: 0.3s;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 300px;
+    
+  }
+  .product-plan-flex-child:hover {
+    background-color: #9EDFD3;
+    color: #348B7C;
+  }
+  
+  .product-plan-buffer {
+    width: 30px;
+  }
+  
+  .flex-container-product {
+    display: flex;
+    background: #FFFFFF;
+  }  
+  
+  .flex-child-product {
+    position: relative;
+    flex: 1;
+    margin-left: 75px;
+  }  
+  
+  .flex-child-product:first-child {
+    margin-right: 100px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 15em;
+  }
+  
+  .calender-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 3; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    text-align: center;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .calender-modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    border-radius: 5px;
+    width: 400px;
+    padding-bottom: 30px;
+  }
+
+  .calender-modal-subcontent {
+    background-color: #fefefe;
+    padding-left: 50px;
+    padding-right: 50px;
+    width: 300px;
+    border-radius: 5px;
+  }
+
+  .calender-img {
+      height: 200px;
+  }
+
+  .calender-title {
+      text-align: left;
+      align-items: center;
+      padding-left: 0px;
+      padding-top: 20px;
+      margin-bottom: 15px;
+      font-weight: bold;
+  }
+
+  .calender-title-buffer {
+      margin-left: 25px;
+      margin-right: 70px;
+  }
+
+  .calender-title-arrows {
+    margin-left: 15px;
+    height: 10px;
+    cursor: pointer;
+    margin-top:5px;
+    transition: 0.3s;
+  }
+
+  .calender-title-arrows:hover {
+    opacity: 60%;
+  }
+
+  .calender-date {
+      float: left;
+      width: 80px;
+      margin-top:2px;
+  }
+
+  .calender-plan {
+      font-size: 10px;
+      background-color: #9EDFD3;
+      color: #348B7C;
+      border-radius: 2px;
+      padding-left: 5px;
+      padding-right: 5px;
+      padding-top: 1px;
+      padding-bottom: 2px;
+      
+
+      
+  }
+
+  .calender-header {
+    text-align: left;
+    vertical-align: middle;
+    padding-top: 12px;
+    padding-bottom: 7px;
+  }
+
+  .calender-header-text {
+      font-size: 11px;
+      font-weight: bold;
+
+  }
+
+  .calender-clear{
+      height: 15px;
+      vertical-align: middle;
+      margin-left: 20px;
+      margin-right: 110px;
+      transition: 0.3s;
+      cursor: pointer;
+  }
+
+  .calender-clear:hover{
+    opacity: 60%;
+}
+
+  hr {
+    border: 1px solid #E0E0E0;
+  }
+  
+  .calender-flex-container {
+    display: flex;
+    margin-top: 20px;
+  }
+
+  .calender-flex-child {
+    position: relative;
+    flex: 1;
+    text-align: left;
+    
+  }
+
+  .calender-start-return {
+      color: #666666;
+      font-size: 11px;
+  }
+
+  .calender-start-return-date {
+      width: 110px;
+      border: 2px solid #9EDFD3;
+      background-color: #E6F7F4;
+      font-size: 14px;
+      margin-top: 5px;
+      padding-left: 7px;
+      padding-bottom: 3px;
+      padding-top: 3px;
+      border-radius: 3px;
+  }
+
+  .calender-bottom {
+      text-align: left;
+      margin-top: 20px;
+  }
+  .calender-submit {
+    background-color: #9EDFD3;
+    color: #348B7C;
+    border-radius: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 7px;
+    margin-right: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: 500;
+  }
+
+  .calender-submit:hover {
+    opacity: 60%;
+  }
+
+  .calender-clear-all-dates {
+      color: #828282;
+      cursor: pointer;
+      transition: 0.3s;
+  }
+
+  .calender-clear-all-dates:hover {
+    opacity: 60%;
+  }

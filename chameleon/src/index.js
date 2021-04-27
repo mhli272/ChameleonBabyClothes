@@ -9,32 +9,7 @@ import {HowItWorks} from './HowItWorks.js'
 import {Favorites} from './Favorites.js'
 import {Product} from './Product.js'
 
-import clothing1 from './images/clothing1.png';
-import clothing2 from './images/clothing2.png';
-import clothing1_og from './images/clothing1_og.png';
-import clothing2_og from './images/clothing2_og.png';
-
 export default function App() {
-
-  var favorites = [{
-    id: 1,
-    imgPath: clothing1,
-    age: "5-6 months",
-    type: "Dresses",
-    name: "Floral Dress",
-    brand: "Jacadi",
-    imgName: clothing1_og
-  },
-    {
-      id: 2,
-      imgPath: clothing2,
-      age: "3-4 months",
-      type: "Onesies",
-      name: "Out and About Romper",
-      brand: "Monica + Andy",
-      imgName: clothing2_og
-    }];
-  localStorage.setItem("favorites", JSON.stringify(favorites));
 
   return (
    <Router>

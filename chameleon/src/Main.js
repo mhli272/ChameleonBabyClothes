@@ -27,7 +27,6 @@ import Navbar from './components/Navbar/Navbar.js';
 
 export class Main extends React.Component {
 
-
   waitlistSignup(){
     if (document.getElementById("waitlist").value!="") {
       var modal = document.getElementById("myModal");
@@ -42,19 +41,16 @@ export class Main extends React.Component {
   }
 
 
-
+  
   render() {
     return (
-
-
-
-      
 		<fragment>
  
  {/*header*/}
   <div>
   <Navbar></Navbar>
   </div> 
+  
 
   <div class="buffer"> </div>
 

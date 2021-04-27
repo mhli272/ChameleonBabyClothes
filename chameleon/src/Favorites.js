@@ -43,156 +43,7 @@ export class Favorites extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            items: [
-                {
-                    id: 1,
-                    imgPath: clothing1,
-                    age: "5-6 months",
-                    type: "Dresses",
-                    name: "Floral Dress",
-                    brand: "Jacadi",
-                    imgName: clothing1_og
-                },
-                {
-                    id: 2,
-                    imgPath: clothing2,
-                    age: "3-4 months",
-                    type: "Onesies",
-                    name: "Out and About Romper",
-                    brand: "Monica + Andy",
-                    imgName: clothing2_og
-                },
-                {
-                    id: 3,
-                    imgPath: clothing3,
-                    age: "1-2 months",
-                    type: "Tops",
-                    name: "Fleece Jacket",
-                    brand: "Winter Water Factory",
-                    imgName: clothing3_og
-                },
-                {
-                    id: 4,
-                    imgPath: clothing4,
-                    age: "1-2 months",
-                    type: "Tops",
-                    name: "Soft Cotton Tee",
-                    brand: "Colored Organics",
-                    imgName: clothing4_og
-                },
-                {
-                    id: 5,
-                    imgPath: clothing1,
-                    age: "5-6 months",
-                    type: "Dresses",
-                    name: "Floral Dress",
-                    brand: "Jacadi",
-                    imgName: clothing1_og
-                },
-                {
-                    id: 6,
-                    imgPath: clothing2,
-                    age: "3-4 months",
-                    type: "Onesies",
-                    name: "Out and About Romper",
-                    brand: "Monica + Andy",
-                    imgName: clothing2_og
-                },
-                {
-                    id: 7,
-                    imgPath: clothing3,
-                    age: "1-2 months",
-                    type: "Tops",
-                    name: "Fleece Jacket",
-                    brand: "Winter Water Factory",
-                    imgName: clothing3_og
-                },
-                {
-                    id: 8,
-                    imgPath: clothing4,
-                    age: "1-2 months",
-                    type: "Tops",
-                    name: "Soft Cotton Tee",
-                    brand: "Colored Organics",
-                    imgName: clothing4_og
-                },
-                {
-                    id: 9,
-                    imgPath: clothing1,
-                    age: "5-6 months",
-                    type: "Dresses",
-                    name: "Floral Dress",
-                    brand: "Jacadi",
-                    imgName: clothing1_og
-                },
-                {
-                    id: 10,
-                    imgPath: clothing2,
-                    age: "3-4 months",
-                    type: "Onesies",
-                    name: "Out and About Romper",
-                    brand: "Monica + Andy",
-                    imgName: clothing2_og
-                },
-                {
-                    id: 11,
-                    imgPath: clothing3,
-                    age: "1-2 months",
-                    type: "Tops",
-                    name: "Fleece Jacket",
-                    brand: "Winter Water Factory",
-                    imgName: clothing3_og
-                },
-                {
-                    id: 12,
-                    imgPath: clothing4,
-                    age: "1-2 months",
-                    type: "Tops",
-                    name: "Soft Cotton Tee",
-                    brand: "Colored Organics",
-                    imgName: clothing4_og
-                },
-                {
-                    id: 13,
-                    imgPath: clothing1,
-                    age: "5-6 months",
-                    type: "Dresses",
-                    name: "Floral Dress",
-                    brand: "Jacadi",
-                    imgName: clothing1_og
-                },
-                {
-                    id: 14,
-                    imgPath: clothing2,
-                    age: "3-4 months",
-                    type: "Onesies",
-                    name: "Out and About Romper",
-                    brand: "Monica + Andy",
-                    imgName: clothing2_og
-                },
-                {
-                    id: 15,
-                    imgPath: clothing3,
-                    age: "1-2 months",
-                    type: "Tops",
-                    name: "Fleece Jacket",
-                    brand: "Winter Water Factory",
-                    imgName: clothing3_og
-                },
-                {
-                    id: 16,
-                    imgPath: clothing4,
-                    age: "1-2 months",
-                    type: "Tops",
-                    name: "Soft Cotton Tee",
-                    brand: "Colored Organics",
-                    imgName: clothing4_og
-                }
-            ],
-
             //flag = 1 means checked, flag = 0 means unchecked
-
-
             clothingType: ['Tops', 'Dresses', 'Onesies', 'Bottoms', 'Shoes', 'Accessories'],
 
             clothingAge: ['1-2 months', '3-4 months', '5-6 months', '7-8 months', '9-10 months', '11-12 months']
@@ -367,23 +218,37 @@ export class Favorites extends React.Component {
     }
 
     goToItemPage(id) {
-        for (var i = 0; i < this.state.items.length; i++) {
-            if (this.state.items[i].id == id) {
-                sessionStorage.setItem('name', this.state.items[i].name);
-                sessionStorage.setItem('age', this.state.items[i].age);
-                sessionStorage.setItem('brand', this.state.items[i].brand);
-                sessionStorage.setItem('imgName', this.state.items[i].imgName);
+        var tempArr = JSON.parse(localStorage.getItem('favoritesList'));
+        for (var i = 0; i < tempArr.length; i++) {
+            if (tempArr[i].id == id) {
+                localStorage.setItem('id', JSON.stringify(tempArr[i].id));
+                localStorage.setItem('imgPath', JSON.stringify(tempArr[i].imgPath));
+                localStorage.setItem('type', JSON.stringify(tempArr[i].type));
+                localStorage.setItem('name', JSON.stringify(tempArr[i].name));
+                localStorage.setItem('age', JSON.stringify(tempArr[i].age));
+                localStorage.setItem('brand', JSON.stringify(tempArr[i].brand));
+                localStorage.setItem('imgName', JSON.stringify(tempArr[i].imgName));
+                localStorage.setItem('favorite', JSON.stringify(tempArr[i].favorite));
                 window.location.href = "/Product";
                 break;
             }
         }
     }
 
+    emptyFavorites() {
+        if (localStorage.getItem('favoritesList') == null) {
+            var temp = [];
+            localStorage.setItem('favoritesList', JSON.stringify(temp));
+        }
+    }
+
+
     render() {
 
         if (this.state.redirect) {
             return <Redirect to={this.state.redirect} />
         }
+        this.emptyFavorites();
 
         return (
             <fragment>
@@ -442,7 +307,7 @@ export class Favorites extends React.Component {
                     </div>
                     <div class="flex-child-shop:first-child" >
                         <div class="view-all">View All</div>
-                        {JSON.parse(localStorage.getItem("favorites")).filter(item => this.state.clothingType.includes(item.type) && this.state.clothingAge.includes(item.age)).map(filteredItem =>
+                        {JSON.parse(localStorage.getItem("favoritesList")).filter(item => this.state.clothingType.includes(item.type) && this.state.clothingAge.includes(item.age)).map(filteredItem =>
                         (<div class="card" onClick={() => this.goToItemPage(filteredItem.id)}>
                             <img class="item" src={filteredItem.imgPath}></img>
                         </div>))}

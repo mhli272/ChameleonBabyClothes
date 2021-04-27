@@ -15,6 +15,7 @@ import clothing3_og from './images/clothing3_og.png';
 import clothing4_og from './images/clothing4_og.png';
 
 import heart_outline from './images/heart_outline.png';
+import heart_fill from './images/heart_fill.png';
 import calender from './images/calender.png';
 import product_prev from './images/product-prev.png';
 import product_next from './images/product-next.png';
@@ -24,18 +25,21 @@ import Footer from './components/Footer/Footer.js';
 import Navbar from './components/Navbar/Navbar.js';
 
 import Collapsible from 'react-collapsible';
-
+import { Favorites } from './Favorites';
 
 export class Product extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-
-      name: sessionStorage.getItem('name'),
-      brand: sessionStorage.getItem('brand'),
-      age: sessionStorage.getItem('age'),
-      imgName: sessionStorage.getItem('imgName'),
+      id: JSON.parse(localStorage.getItem('id')),
+      imgPath: JSON.parse(localStorage.getItem('imgPath')),
+      name: JSON.parse(localStorage.getItem('name')),
+      type: JSON.parse(localStorage.getItem("type")),
+      brand: JSON.parse(localStorage.getItem('brand')),
+      age: JSON.parse(localStorage.getItem('age')),
+      imgName: JSON.parse(localStorage.getItem('imgName')),
+      favorite: JSON.parse(localStorage.getItem('favorite')),
       date: 'May 2021',
       plan_name: 'Monthly Plan',
       start_date: 'May 1st, 2020',
@@ -110,6 +114,55 @@ export class Product extends React.Component {
     }
   }
 
+  clickedFavorite(){
+    if(this.state.favorite == heart_outline){
+      this.setState({favorite: heart_fill});
+      var item = {
+        id: this.state.id,
+        imgPath: this.state.imgPath,
+        age: this.state.age,
+        type: this.state.type,
+        name: this.state.name,
+        brand: this.state.brand,
+        imgName: this.state.imgName,
+        favorite: heart_fill
+      }
+      //localStorage.setItem('favorite', JSON.stringify(heart_fill));
+      if(localStorage.getItem("favoritesList") == null){
+        var tempArr = [];
+        tempArr.push(item);
+        localStorage.setItem('favoritesList', JSON.stringify(tempArr));
+      }else{
+        var tempArr = JSON.parse(localStorage.getItem("favoritesList"));
+        var changed = false;
+        for (var i = 0; i < tempArr.length; i++) {
+          if (this.state.id == tempArr[i].id) {
+            tempArr[i].favorite = heart_fill;
+            changed = true;
+            break;
+          }
+        }
+        if (changed == false)
+          tempArr.push(item);
+        localStorage.setItem('favoritesList', JSON.stringify(tempArr));
+      }
+    }else{
+      this.setState({favorite: heart_outline});
+      localStorage.setItem('favorite', JSON.stringify(heart_outline));
+      var tempArr = JSON.parse(localStorage.getItem("favoritesList"));
+      var newArr = [];
+      for (var i = 0; i < tempArr.length; i++) {
+        if (this.state.id != tempArr[i].id) {
+          tempArr[i].favorite = heart_fill;
+          newArr.push(tempArr[i]);
+        }else{
+          tempArr[i].favorite = heart_outline;
+        }
+      }
+      localStorage.setItem('favoritesList', JSON.stringify(newArr));
+    }  
+  }
+
 
   render() {
     return (
@@ -140,7 +193,7 @@ export class Product extends React.Component {
             <div>
               <span>{this.state.name}</span>
               <span class="product-header-buffer"></span>
-              <span><img class="product-heart-size" src={heart_outline}></img></span>
+              <span><img class="product-heart-size" onClick={() => this.clickedFavorite()} src={this.state.favorite}></img></span>
             </div>
             <div>{this.state.age}</div>
             <div>{this.state.brand}</div>

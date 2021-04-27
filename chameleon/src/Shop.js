@@ -17,9 +17,9 @@ import clothing2_og from './images/clothing2_og.png';
 import clothing3_og from './images/clothing3_og.png';
 import clothing4_og from './images/clothing4_og.png';
 
-import shopall from './images/shopall.png';
-import washingmachines from './images/washingmachines.png';
-import sanitationImg from './images/sanitation-button.png';
+import heart_outline from './images/heart_outline.png';
+import heart_fill from './images/heart_fill.png';
+
 import { Redirect } from "react-router-dom";
 
 import Footer from './components/Footer/Footer.js';
@@ -52,7 +52,8 @@ export class Shop extends React.Component {
         type: "Dresses",
         name: "Floral Dress",
         brand: "Jacadi",
-        imgName: clothing1_og
+        imgName: clothing1_og,
+        favorite: heart_outline
       },
       {
         id: 2,
@@ -61,7 +62,9 @@ export class Shop extends React.Component {
         type: "Onesies",
         name: "Out and About Romper",
         brand: "Monica + Andy",
-        imgName: clothing2_og
+        imgName: clothing2_og,
+        favorite: heart_outline
+
       },
       {
         id: 3,
@@ -70,7 +73,9 @@ export class Shop extends React.Component {
         type: "Tops",
         name: "Fleece Jacket",
         brand: "Winter Water Factory",
-        imgName: clothing3_og
+        imgName: clothing3_og,
+        favorite: heart_outline
+
       },
       {
         id: 4,
@@ -79,7 +84,8 @@ export class Shop extends React.Component {
         type: "Tops",
         name: "Soft Cotton Tee",
         brand: "Colored Organics",
-        imgName: clothing4_og
+        imgName: clothing4_og,
+        favorite: heart_outline
       },
       {
         id: 5,
@@ -88,7 +94,8 @@ export class Shop extends React.Component {
         type: "Dresses",
         name: "Floral Dress",
         brand: "Jacadi",
-        imgName: clothing1_og
+        imgName: clothing1_og,
+        favorite: heart_outline
       },
       {
         id: 6,
@@ -97,7 +104,8 @@ export class Shop extends React.Component {
         type: "Onesies",
         name: "Out and About Romper",
         brand: "Monica + Andy",
-        imgName: clothing2_og
+        imgName: clothing2_og,
+        favorite: heart_outline
       },
       {
         id: 7,
@@ -106,7 +114,8 @@ export class Shop extends React.Component {
         type: "Tops",
         name: "Fleece Jacket",
         brand: "Winter Water Factory",
-        imgName: clothing3_og
+        imgName: clothing3_og,
+        favorite: heart_outline
       },
       {
         id: 8,
@@ -115,7 +124,8 @@ export class Shop extends React.Component {
         type: "Tops",
         name: "Soft Cotton Tee",
         brand: "Colored Organics",
-        imgName: clothing4_og
+        imgName: clothing4_og,
+        favorite: heart_outline
       },
       {
         id: 9,
@@ -124,7 +134,8 @@ export class Shop extends React.Component {
         type: "Dresses",
         name: "Floral Dress",
         brand: "Jacadi",
-        imgName: clothing1_og
+        imgName: clothing1_og,
+        favorite: heart_outline
       },
       {
         id: 10,
@@ -133,7 +144,8 @@ export class Shop extends React.Component {
         type: "Onesies",
         name: "Out and About Romper",
         brand: "Monica + Andy",
-        imgName: clothing2_og
+        imgName: clothing2_og,
+        favorite: heart_outline
       },
       {
         id: 11,
@@ -142,7 +154,8 @@ export class Shop extends React.Component {
         type: "Tops",
         name: "Fleece Jacket",
         brand: "Winter Water Factory",
-        imgName: clothing3_og
+        imgName: clothing3_og,
+        favorite: heart_outline
       },
       {
         id: 12,
@@ -151,7 +164,8 @@ export class Shop extends React.Component {
         type: "Tops",
         name: "Soft Cotton Tee",
         brand: "Colored Organics",
-        imgName: clothing4_og
+        imgName: clothing4_og,
+        favorite: heart_outline
       },
       {
         id: 13,
@@ -160,7 +174,8 @@ export class Shop extends React.Component {
         type: "Dresses",
         name: "Floral Dress",
         brand: "Jacadi",
-        imgName: clothing1_og
+        imgName: clothing1_og,
+        favorite: heart_outline
       },
       {
         id: 14,
@@ -169,7 +184,8 @@ export class Shop extends React.Component {
         type: "Onesies",
         name: "Out and About Romper",
         brand: "Monica + Andy",
-        imgName: clothing2_og
+        imgName: clothing2_og,
+        favorite: heart_outline
       },
       {
         id: 15,
@@ -178,7 +194,8 @@ export class Shop extends React.Component {
         type: "Tops",
         name: "Fleece Jacket",
         brand: "Winter Water Factory",
-        imgName: clothing3_og
+        imgName: clothing3_og,
+        favorite: heart_outline
       },
       {
         id: 16,
@@ -187,7 +204,8 @@ export class Shop extends React.Component {
         type: "Tops",
         name: "Soft Cotton Tee",
         brand: "Colored Organics",
-        imgName: clothing4_og
+        imgName: clothing4_og,
+        favorite: heart_outline
       }
       ],
 
@@ -370,12 +388,32 @@ export class Shop extends React.Component {
   goToItemPage(id) {
     for (var i=0; i<this.state.items.length; i++) {
       if (this.state.items[i].id==id) {
-        sessionStorage.setItem('name', this.state.items[i].name);
-        sessionStorage.setItem('age', this.state.items[i].age);
-        sessionStorage.setItem('brand', this.state.items[i].brand);
-        sessionStorage.setItem('imgName', this.state.items[i].imgName);
+        localStorage.setItem('id', JSON.stringify(this.state.items[i].id));
+        localStorage.setItem('imgPath', JSON.stringify(this.state.items[i].imgPath));
+        localStorage.setItem('type', JSON.stringify(this.state.items[i].type));
+        localStorage.setItem('name', JSON.stringify(this.state.items[i].name));
+        localStorage.setItem('age', JSON.stringify(this.state.items[i].age));
+        localStorage.setItem('brand', JSON.stringify(this.state.items[i].brand));
+        localStorage.setItem('imgName', JSON.stringify(this.state.items[i].imgName));
+        localStorage.setItem('favorite', JSON.stringify(this.state.items[i].favorite));
         window.location.href="/Product";
         break;
+      }
+    }
+  }
+
+  checkFavorites(){
+    if(localStorage.getItem('favoritesList') != null){
+      var tempArr = JSON.parse(localStorage.getItem('favoritesList'));
+      var tempItems = this.state.items.slice();
+      for (var i = 0; i < tempArr.length; i++) {
+        for (var j = 0; j < tempItems.length; j++) {
+          if (tempItems[j].id == tempArr[i].id && tempItems[j].favorite == heart_outline) {
+            tempItems[j].favorite = heart_fill;
+            this.setState({items: tempItems});
+            break;
+          }
+        }
       }
     }
   }
@@ -385,6 +423,8 @@ export class Shop extends React.Component {
     if (this.state.redirect) {
       return <Redirect to={this.state.redirect} />
     }
+
+    this.checkFavorites();
 
     return (
       <fragment>

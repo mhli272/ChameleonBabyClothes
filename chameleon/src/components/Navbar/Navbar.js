@@ -19,18 +19,18 @@ class Navbar extends Component {
 
 
         return (
-            <nav className="NavbarItems">
+            <div className="NavbarItems">
             
-                <a href="/"><img src={mainLogo} className="logo"></img></a>
+                <a href="/"><img src={mainLogo} className="logo" ></img></a>
+                <div style={{'width':'100%', 'flex-shrink': '3'}}></div>
                 <a className="menu-item" href="/shop">SHOP</a>
                 <a className="menu-item" href="/how-it-works">HOW IT WORKS</a>
                 <a className="menu-item" href="/community">COMMUNITY</a>
-                <div className="buffer"></div>
+                <div style={{'width': '40px'}}></div>
                 <a href="/favorites"><img src={heartImg} className="header-icon" ></img></a>
-                <img src={cartImg} className="header-icon"></img>
-                <img src={userImg} className="header-icon"></img>
-                <div className="endbuffer"></div>
-
+                <a href="/cart"><img src={cartImg} className="header-icon" ></img></a>
+                <a ><img src={userImg} className="header-icon" ></img></a>
+                <div style={{'width': '50px'}}></div>
 
 
                 {/*
@@ -52,7 +52,7 @@ class Navbar extends Component {
                 </ul>
             */}
             
-            </nav>
+            </div>
         )
     }
 }

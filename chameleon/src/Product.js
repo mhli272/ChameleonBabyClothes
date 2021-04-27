@@ -20,6 +20,9 @@ import calender from './images/calender.png';
 import product_prev from './images/product-prev.png';
 import product_next from './images/product-next.png';
 import clear from './images/clear.png';
+import frame from './images/frame.png';
+import continueshopping from './images/continueshopping.png';
+import calender_icon from './images/calender_icon.png';
 
 import Footer from './components/Footer/Footer.js';
 import Navbar from './components/Navbar/Navbar.js';
@@ -45,7 +48,8 @@ export class Product extends React.Component {
       start_date: 'May 1st, 2020',
       return_date: 'June 1st, 2021',
       plan_mode: 0, //0 = monthly, 1 means seasonal
-      date_display: ''
+      date_display: 'MM/DD/YYYY - MM/DD/YYYY',
+      items_left: 0
     }
   }
 
@@ -80,7 +84,7 @@ export class Product extends React.Component {
       this.setState({ date_display: this.state.start_date + ' - ' + this.state.return_date })
     }
     else {
-      this.setState({ date_display: '' })
+      this.setState({ date_display: 'MM/DD/YYYY - MM/DD/YYYY' })
     }
     var modal = document.getElementById("myModal");
     modal.style.display = "none";
@@ -109,9 +113,15 @@ export class Product extends React.Component {
   }
 
   addToCart() {
-    if (this.state.date_display != '') {
-
+    if (this.state.date_display != 'MM/DD/YYYY - MM/DD/YYYY') {
+      var mini_cart = document.getElementById("mini-cart");
+      mini_cart.style.display = "block";
     }
+  }
+
+  closeMinicart() {
+    var mini_cart = document.getElementById("mini-cart");
+    mini_cart.style.display = "none";
   }
 
   clickedFavorite(){
@@ -179,48 +189,51 @@ export class Product extends React.Component {
 
         <div class="buffer"> </div>
 
-        <div class="buffer"> </div>
+        <div class="product-buffer"> </div>
 
         <div class="flex-container-product">
 
           <div class="flex-child-product">
-            <img src={this.state.imgName}></img>
+            <img style={{ width: "300px" }} src={this.state.imgName}></img>
 
 
           </div>
           <div class="flex-child-product:first-child" >
 
-            <div>
-              <span>{this.state.name}</span>
-              <span class="product-header-buffer"></span>
+            <div style={{ 'display': 'flex' }}>
+              <span style={{ 'white-space': 'nowrap', 'font-family': "DM Sans", 'font-style': "normal", 'font-weight': "bold", 'font-size': "32px", 'color': "#333333" }}>{this.state.name}</span>
+              <span style={{ width: '100%', 'flex-shrink': '3' }}></span>
               <span><img class="product-heart-size" onClick={() => this.clickedFavorite()} src={this.state.favorite}></img></span>
             </div>
-            <div>{this.state.age}</div>
-            <div>{this.state.brand}</div>
+            <div style={{ 'font-family': 'DM Sans', 'font-style': 'normal', 'font-weight': 'bold', 'font-size': '18px', 'line-height': '23px', 'letter-spacing': '0.15em', 'color': '#828282' }}>{this.state.age}</div>
+            <div style={{ 'font-family': 'DM Sans', 'font-style': 'normal', 'font-weight': 'normal', 'font-size': '18px', 'line-height': '23px', 'color': '#828282' }}>{this.state.brand}</div>
 
             <hr></hr>
 
-            <div>CHOOSE A PLAN:</div>
+            <div style={{ 'margin-bottom': '15px', 'margin-top': '30px', 'font-family': 'DM Sans', 'font-style': 'normal', 'font-weight': '500', 'font-size': '14px', 'line-height': '18px', 'letter-spacing': '0.15em', 'color': '#333333' }}>CHOOSE A PLAN:</div>
             <div className="product-plan-flex-container">
               <div onClick={() => this.calenderpopup(0)} className="product-plan-flex-child">
-                <div>Monthly</div>
-                <div>Choose up to 5</div>
-                <div>items for 30 days</div>
+                <div style={{ 'font-weight': 'bold', 'font-size': '16px' }}>Monthly</div>
+                <div style={{}}>Choose up to 5</div>
+                <div style={{}}>items for 30 days</div>
               </div>
               <div className="product-plan-buffer"></div>
               <div onClick={() => this.calenderpopup(1)} className="product-plan-flex-child">
-                <div>Seasonal</div>
-                <div>Choose up to 8</div>
-                <div>items for 90 days</div>
+                <div style={{ 'font-weight': 'bold', 'font-size': '16px' }}>Seasonal</div>
+                <div style={{}}>Choose up to 8</div>
+                <div style={{}}>items for 90 days</div>
               </div>
             </div>
 
-            <div>DELIVERY + RETURN DATES</div>
+            <div style={{ 'margin-bottom': '10px', 'font-family': 'DM Sans', 'font-style': 'normal', 'font-weight': '500', 'font-size': '14px', 'line-height': '18px', 'letter-spacing': '0.15em' }}>DELIVERY + RETURN DATES</div>
 
-            <div>{this.state.date_display}</div>
+            <div style={{ 'padding-bottom': '5px', 'padding-top': '5px', 'padding-left': '15px', 'border-radius': '4px', 'width': '300px', 'border': '2px solid #BDBDBD', 'font-family': 'DM Sans', 'font-style': 'normal', 'font-weight': '500', 'font-size': '16px', 'line-height': '21px', 'color': '#828282' }} >
+              <span style={{ 'vertical-align': 'middle', 'margin-right': '15px' }}><img src={calender_icon}></img></span>
+              <span style={{ 'vertical-align': 'middle' }}>{this.state.date_display}</span>
+            </div>
 
             <div>
-              <button onClick={() => this.addToCart()}>ADD TO CART</button>
+              <button className="add-to-cart" onClick={() => this.addToCart()}>ADD TO CART</button>
             </div>
 
 
@@ -234,10 +247,8 @@ export class Product extends React.Component {
 
 
 
-
+        {/* Calender Modal --> */}
         <div id="myModal" class="calender-modal">
-
-          {/* Modal content --> */}
 
           <div className="calender-modal-content">
             <div className="calender-header">
@@ -285,6 +296,39 @@ export class Product extends React.Component {
 
 
 
+            </div>
+
+          </div>
+
+        </div>
+
+        {/* Mini-cart Modal --> */}
+        <div id="mini-cart" class="mini-cart-modal">
+
+          <div className="mini-cart-modal-content">
+            <div style={{ 'margin-bottom': '40px' }}>
+              <span style={{ 'vertical-align': 'middle', 'font-family': 'DM Sans', 'font-style': 'normal', 'font-weight': 'bold', 'font-size': '18px', 'line-height': '23px', 'color': '#333333' }}>Your Shopping Bag</span>
+              <span onClick={() => this.closeMinicart()} style={{ 'cursor':'pointer','margin-left': '120px', 'vertical-align': 'middle' }}><img style={{ 'vertical-align': 'middle' }} src={clear}></img></span>
+            </div>
+            <div style={{ 'font-family': 'DM Sans', 'font-style': 'normal', 'font-weight': 'bold', 'font-size': '16px', 'line-height': '21px', 'color': '#333333' }}>{this.state.plan_name}</div>
+
+            <hr></hr>
+
+            <div style={{ 'margin-top':'30px','margin-bottom': '10px', 'font-family': 'DM Sans', 'font-style': 'normal', 'font-weight': '500', 'font-size': '12px', 'line-height': '18px', 'letter-spacing': '0.15em' }}>DELIVERY + RETURN DATES</div>
+
+            <div style={{ 'padding-bottom': '5px', 'padding-top': '5px', 'padding-left': '15px', 'border-radius': '4px', 'width': '200px', 'border': '2px solid #BDBDBD', 'font-family': 'DM Sans', 'font-style': 'normal', 'font-weight': '500', 'font-size': '11px', 'line-height': '13px','color': '#333333' }} >
+              <span style={{ 'vertical-align': 'middle', 'margin-right': '7px' }}><img style={{height: '25px', 'vertical-align':'middle'}} src={calender_icon}></img></span>
+              <span style={{ 'vertical-align': 'middle' }}>{this.state.date_display}</span>
+            </div>
+
+            <hr></hr>
+
+            <div style={{'display':'flex'}}>
+              <div style={{'flex':'1'}}><img src={frame}></img></div>
+              <div style={{'flex':'1'}}>
+                <div>You have 3 items left in your {this.state.plan_name}.</div>
+                <div><img src={continueshopping}></img></div>
+              </div>
             </div>
 
           </div>

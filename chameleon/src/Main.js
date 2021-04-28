@@ -65,7 +65,7 @@ export class Main extends React.Component {
   <div class="flex-child main-background" >
       <div className="main-title">Renting baby clothes has never been easier.</div>
       <div className="main-subtitle">Join Chameleon today and choose from 20+ styles.</div>
-      <input id="waitlist" type="text" className="email-input" placeholder="Type your email here..."></input>
+      <input id="waitlist" style={{font: 'DM Sans'}} type="text" className="email-input" placeholder="Type your email here..."></input>
       <div><img src={signupImg} className="sign-up-button" onClick={this.waitlistSignup}></img></div>
       {/* The Modal --> */}
       <div id="myModal" class="modal">

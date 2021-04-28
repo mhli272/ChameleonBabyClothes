@@ -487,7 +487,7 @@ export class Shop extends React.Component {
             </div>
 
           </div>
-          <div class="flex-child-shop:first-child" >
+          <div class="flex-child-shop:first-child">
             <div class="view-all">View All</div>
             {this.state.items.filter(item => this.state.clothingType.includes(item.type) && this.state.clothingAge.includes(item.age)).map(filteredItem =>
             (<div class="card" onClick={() => this.goToItemPage(filteredItem.id)}>

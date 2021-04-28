@@ -27,7 +27,7 @@
 }  
 
 .flex-child-shop:first-child {
-  margin-right: 100px;
+  margin-right: 30px;
   flex-grow: 0;
   flex-shrink: 0;
   flex-basis: 15em;
@@ -262,5 +262,4 @@
     transform: rotate(360deg);
   }
 }
-
 

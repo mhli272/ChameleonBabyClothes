@@ -14,6 +14,12 @@ import clothing2_og from './images/clothing2_og.png';
 import clothing3_og from './images/clothing3_og.png';
 import clothing4_og from './images/clothing4_og.png';
 
+import clothing1 from './images/clothing1.png';
+import clothing2 from './images/clothing2.png';
+import clothing3 from './images/clothing3.png';
+import clothing4 from './images/clothing4.png';
+import shopall from './images/shopall.png';
+
 import heart_outline from './images/heart_outline.png';
 import heart_fill from './images/heart_fill.png';
 import calender from './images/calender.png';
@@ -23,6 +29,18 @@ import clear from './images/clear.png';
 import frame from './images/frame.png';
 import continueshopping from './images/continueshopping.png';
 import calender_icon from './images/calender_icon.png';
+
+
+import reviewChart from './images/reviewChart.png';
+import reviews from './images/reviews.png';
+import writeAReview from './images/writeAReview.png';
+import chamelemom from './images/Chamelemom.png';
+import chamelemomInfo from './images/chamelemom_info.png';
+import chameledad from './images/chameledad.png';
+import chameledadInfo from './images/chameledad_info.png';
+import chamelefam from './images/chamelefam.png';
+import chamelefamInfo from './images/chamelefam_info.png';
+import seeMoreReviews from './images/See_more_reviews.png';
 
 import Footer from './components/Footer/Footer.js';
 import Navbar from './components/Navbar/Navbar.js';
@@ -151,7 +169,7 @@ export class Product extends React.Component {
             changed = true;
             break;
           }
-        }
+        } 
         if (changed == false)
           tempArr.push(item);
         localStorage.setItem('favoritesList', JSON.stringify(tempArr));
@@ -176,15 +194,11 @@ export class Product extends React.Component {
 
   render() {
     return (
-
-
-
-
       <fragment>
 
         {/*header*/}
         <div>
-          <Navbar ></Navbar>
+          <Navbar></Navbar>
         </div>
 
         <div class="buffer"> </div>
@@ -334,6 +348,60 @@ export class Product extends React.Component {
           </div>
 
         </div>
+
+
+        {/*Reviews*/}
+        <div class="review-buffer"> </div>
+        <div class="rectangle-product">
+          <div class="review-buffer"> </div>
+          <div className="flex-container-review">
+            <div class="flex-child-stars">
+              <div><img src={reviews}></img></div>
+              <br></br>
+              <div><img src={writeAReview}></img></div>
+            </div>
+            <div class="flex-child-ratings-chart">
+              <img src={reviewChart} class="reviewChartImg"></img>
+            </div>
+          </div>
+        </div>
+
+        {/*charmelemom*/}
+
+        <div class="reviews">
+          <span class="individual-info"><img src={chamelemom}></img></span>
+          <span><img src={chamelemomInfo} class="reviewChartImg"></img></span>
+        </div>
+        <hr class="line"></hr>
+        <div class="reviews">
+          <span class="individual-info"><img src={chameledad}></img></span>
+          <span><img src={chameledadInfo} class="reviewChartImg"></img></span>
+        </div>
+        <hr class="line"></hr>
+        <div class="reviews">
+          <span class="individual-info"><img src={chamelefam}></img></span>
+          <span><img src={chamelefamInfo} class="reviewChartImg"></img></span>
+        </div>
+        <br></br>
+        <div><img src={seeMoreReviews} class="see-more-reviews"></img></div>
+        <br></br>
+
+
+        {/*You May Also Like*/}
+
+        <div className="new-arrivals">
+          <div className="also-like-title">You may also like</div>
+
+          <div class="scrolling-wrapper">
+            <div class="card"><img class="no-hover-item" src={clothing1}></img></div>
+            <div class="card"><img class="no-hover-item" src={clothing2}></img></div>
+            <div class="card"><img class="no-hover-item" src={clothing3}></img></div>
+            <div class="card"><img class="no-hover-item" src={clothing4}></img></div>
+          </div>
+
+          <div><a href="/shop"><img src={shopall} className="shop-all"></img></a></div>
+        </div>
+
 
         {/*footer*/}
         <div>

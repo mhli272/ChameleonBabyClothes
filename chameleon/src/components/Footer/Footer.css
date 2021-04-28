@@ -47,13 +47,13 @@
   border: 1px solid #BDBDBD;
   box-sizing: border-box;
   border-radius: 10px;
-  width: 250px;
+  width: 200px;
   height: 50px;
   margin-bottom: 20px;
   padding-left: 15px;
   color: #828282;
   font-size: 16px;
-  margin-left: 27px;
+  margin-left: -27px;
   margin-top: 10px;
 }
 

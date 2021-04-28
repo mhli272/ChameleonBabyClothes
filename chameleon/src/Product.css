@@ -13,7 +13,6 @@
   
   .product-heart-size {
     height: 30px;
-    cursor: pointer;
   }
   
   .product-plan-flex-container {
@@ -182,7 +181,7 @@
   }
 
   .calender-header-text {
-      font-size: 11px;
+      font-size: 14px;
       font-weight: bold;
 
   }
@@ -191,7 +190,7 @@
       height: 15px;
       vertical-align: middle;
       margin-left: 20px;
-      margin-right: 110px;
+      margin-right: 90px;
       transition: 0.3s;
       cursor: pointer;
   }
@@ -271,23 +270,35 @@
     z-index: 3; /* Sit on top */
     left: 0;
     top: 0;
+    overflow: auto;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
-    
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   }
   
   /* Modal Content */
   .mini-cart-modal-content {
+    
     background-color: #fefefe;
     margin-left: auto; 
     margin-right: 0;
     width: 300px;
-    height: 100vh;
+    height: auto;
+    
     padding-left: 30px;
     padding-top: 30px;
     padding-right: 30px;
+    border-radius: 10px 0px 0px 10px;
+  }
+
+  .continue-shopping {
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .continue-shopping:hover {
+    opacity: 60%;
   }
 
   .rectangle-product{

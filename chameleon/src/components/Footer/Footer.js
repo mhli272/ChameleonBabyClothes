@@ -4,11 +4,24 @@ import ig from "../../images/instagram.png";
 import tw from "../../images/twitter.png";
 import  fb  from "../../images/facebook.png";
 import submit from "../../images/submit.png";
+import emailjs from 'emailjs-com';
 
 class Footer extends Component {
 
 
     waitlistSignup() {
+
+        var templateParams = {
+            message: document.getElementById("footer-waitlist").value
+          };
+      
+          emailjs.send('service_0b60ubl', 'template_0ud6hu9', templateParams, 'user_DDKfhK8Jqgnlt50bDVTWw')
+            .then(function (response) {
+              console.log('SUCCESS!', response.status, response.text);
+            }, function (error) {
+              console.log('FAILED...', error);
+            });
+
         if (document.getElementById("footer-waitlist").value != "") {
             var modal = document.getElementById("footer-myModal");
             modal.style.display = "block";

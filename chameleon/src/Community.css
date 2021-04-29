@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+
+.title{
+    font-family: 'DM Sans', sans-serif;
+    color:black;
+    font-size: 35px;
+    margin-top: 75px;
+    text-align: left;
+    font-weight: bold;
+    margin-left: 15%;
+    margin-bottom: 20px;
+}
+
+.subtitle{
+    font-family: 'DM Sans', sans-serif;
+    color: #828282;
+    font-size: 20px;
+    text-align: left;
+    margin-left: 15%;
+    margin-bottom: 30px;
+}
+
+.community-img{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.see-more-text{
+    font-family: 'DM Sans', sans-serif;
+    color: black;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 30px;
+    text-decoration: underline;
+}

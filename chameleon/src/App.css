@@ -126,7 +126,7 @@
   cursor: pointer;
 }
 .sign-up-button:hover {
-  opacity: 60%;
+  opacity: 0.6;
 }
 
 .shop-all {
@@ -139,7 +139,7 @@
 }
 
 .shop-all:hover {
-  opacity: 60%;
+  opacity: 0.6;
 }
 
 .new-arrivals-title {

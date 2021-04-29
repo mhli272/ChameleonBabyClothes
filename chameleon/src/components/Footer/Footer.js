@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import "./Footer.css";
 import ig from "../../images/instagram.png";
 import tw from "../../images/twitter.png";
-import  fb  from "../../images/facebook.png";
+import fb from "../../images/facebook.png";
 import submit from "../../images/submit.png";
 import emailjs from 'emailjs-com';
 
@@ -11,18 +11,21 @@ class Footer extends Component {
 
     waitlistSignup() {
 
-        var templateParams = {
-            message: document.getElementById("footer-waitlist").value
-          };
-      
-          emailjs.send('service_0b60ubl', 'template_0ud6hu9', templateParams, 'user_DDKfhK8Jqgnlt50bDVTWw')
-            .then(function (response) {
-              console.log('SUCCESS!', response.status, response.text);
-            }, function (error) {
-              console.log('FAILED...', error);
-            });
+
 
         if (document.getElementById("footer-waitlist").value != "") {
+
+            var templateParams = {
+                message: document.getElementById("footer-waitlist").value
+            };
+
+            emailjs.send('service_0b60ubl', 'template_0ud6hu9', templateParams, 'user_DDKfhK8Jqgnlt50bDVTWw')
+                .then(function (response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                }, function (error) {
+                    console.log('FAILED...', error);
+                });
+
             var modal = document.getElementById("footer-myModal");
             modal.style.display = "block";
 
@@ -42,12 +45,12 @@ class Footer extends Component {
                     <div class="footer-header">Our Product</div>
                     <div class="footer-body-margin"><a class="footer-body" href="/shop">Shop</a></div>
                     <div class="footer-body-margin"><a class="footer-body" href="/how-it-works">How It Works</a></div>
-                    <div class="footer-body-margin"><a class="footer-body" href="/FAQ">FAQ</a></div>
+                    <div class="footer-body-margin"><a class="footer-body">FAQ</a></div>
                 </div>
                 <div class="flex-child-footer">
                     <div class="footer-header">Our Mission</div>
-                    <div class="footer-body-margin"><a class="footer-body" href="/about">About</a></div>
-                    <div class="footer-body-margin"><a class="footer-body" href="/our-impact">Our Impact</a></div>
+                    <div class="footer-body-margin"><a class="footer-body">About</a></div>
+                    <div class="footer-body-margin"><a class="footer-body">Our Impact</a></div>
                 </div>
                 <div class="flex-child-footer">
                     <div class="footer-header">Follow Us</div>

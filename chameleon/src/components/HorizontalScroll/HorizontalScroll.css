@@ -23,7 +23,7 @@
 }
 
 .item:hover {
-  opacity: 60%;
+  opacity: 0.5;
 }
 
 .no-hover-item{
@@ -42,7 +42,7 @@
   display: inline-block;
 }
 .post:hover {
-  opacity: 60%;
+  opacity: 0.5;
 }
 
 .scrolling-wrapper::-webkit-scrollbar {

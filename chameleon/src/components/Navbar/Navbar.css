@@ -77,7 +77,7 @@
 }
 
 .header-icon:hover {
-    opacity: 50%;
+    opacity: 0.5;
 }
 
 .menu-item {
@@ -98,7 +98,7 @@
 }
 
 .menu-item:hover {
-    opacity: 50%;
+    opacity: 0.5;
     color: #686868;
     text-decoration: none;
 }

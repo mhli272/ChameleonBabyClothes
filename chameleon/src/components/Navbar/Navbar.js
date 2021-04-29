@@ -28,7 +28,7 @@ class Navbar extends Component {
                 <a className="menu-item" href="/community">COMMUNITY</a>
                 <div style={{'width': '40px'}}></div>
                 <a href="/favorites"><img src={heartImg} className="header-icon" ></img></a>
-                <a href="/cart"><img src={cartImg} className="header-icon" ></img></a>
+                <a><img src={cartImg} className="header-icon" ></img></a>
                 <a ><img src={userImg} className="header-icon" ></img></a>
                 <div style={{'width': '50px'}}></div>
 

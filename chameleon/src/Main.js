@@ -31,18 +31,21 @@ export class Main extends React.Component {
 
   waitlistSignup() {
 
-    var templateParams = {
-      message: document.getElementById("waitlist").value
-    };
 
-    emailjs.send('service_0b60ubl', 'template_0ud6hu9', templateParams, 'user_DDKfhK8Jqgnlt50bDVTWw')
-      .then(function (response) {
-        console.log('SUCCESS!', response.status, response.text);
-      }, function (error) {
-        console.log('FAILED...', error);
-      });
 
     if (document.getElementById("waitlist").value != "") {
+
+      var templateParams = {
+        message: document.getElementById("waitlist").value
+      };
+
+      emailjs.send('service_0b60ubl', 'template_0ud6hu9', templateParams, 'user_DDKfhK8Jqgnlt50bDVTWw')
+        .then(function (response) {
+          console.log('SUCCESS!', response.status, response.text);
+        }, function (error) {
+          console.log('FAILED...', error);
+        });
+
       var modal = document.getElementById("myModal");
       modal.style.display = "block";
 

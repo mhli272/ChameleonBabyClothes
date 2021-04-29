@@ -11,11 +11,35 @@ import clothing1 from './images/clothing1.png';
 import clothing2 from './images/clothing2.png';
 import clothing3 from './images/clothing3.png';
 import clothing4 from './images/clothing4.png';
+import clothing5 from './images/clothing5.png';
+import clothing6 from './images/clothing6.png';
+import clothing7 from './images/clothing7.png';
+import clothing8 from './images/clothing8.png';
+import clothing9 from './images/clothing9.png';
+import clothing10 from './images/clothing10.png';
+import clothing11 from './images/clothing11.png';
+import clothing12 from './images/clothing12.png';
+import clothing13 from './images/clothing13.png';
+import clothing14 from './images/clothing14.png';
+import clothing15 from './images/clothing15.png';
+import clothing16 from './images/clothing16.png';
 
 import clothing1_og from './images/clothing1_og.png';
 import clothing2_og from './images/clothing2_og.png';
 import clothing3_og from './images/clothing3_og.png';
 import clothing4_og from './images/clothing4_og.png';
+import clothing5_og from './images/clothing5_og.png';
+import clothing6_og from './images/clothing6_og.png';
+import clothing7_og from './images/clothing7_og.png';
+import clothing8_og from './images/clothing8_og.png';
+import clothing9_og from './images/clothing9_og.png';
+import clothing10_og from './images/clothing10_og.png';
+import clothing11_og from './images/clothing11_og.png';
+import clothing12_og from './images/clothing12_og.png';
+import clothing13_og from './images/clothing13_og.png';
+import clothing14_og from './images/clothing14_og.png';
+import clothing15_og from './images/clothing15_og.png';
+import clothing16_og from './images/clothing16_og.png';
 
 import heart_outline from './images/heart_outline.png';
 import heart_fill from './images/heart_fill.png';
@@ -48,7 +72,7 @@ export class Shop extends React.Component {
       {
         id: 1,
         imgPath: clothing1,
-        age: "5-6 months",
+        age: "1-2 months",
         type: "Dresses",
         name: "Floral Dress",
         brand: "Jacadi",
@@ -58,7 +82,7 @@ export class Shop extends React.Component {
       {
         id: 2,
         imgPath: clothing2,
-        age: "3-4 months",
+        age: "1-2 months",
         type: "Onesies",
         name: "Out and About Romper",
         brand: "Monica + Andy",
@@ -89,122 +113,122 @@ export class Shop extends React.Component {
       },
       {
         id: 5,
-        imgPath: clothing1,
-        age: "5-6 months",
-        type: "Dresses",
-        name: "Floral Dress",
-        brand: "Jacadi",
-        imgName: clothing1_og,
-        favorite: heart_outline
-      },
-      {
-        id: 6,
-        imgPath: clothing2,
+        imgPath: clothing5,
         age: "3-4 months",
         type: "Onesies",
-        name: "Out and About Romper",
-        brand: "Monica + Andy",
-        imgName: clothing2_og,
-        favorite: heart_outline
-      },
-      {
-        id: 7,
-        imgPath: clothing3,
-        age: "1-2 months",
-        type: "Tops",
-        name: "Fleece Jacket",
-        brand: "Winter Water Factory",
-        imgName: clothing3_og,
-        favorite: heart_outline
-      },
-      {
-        id: 8,
-        imgPath: clothing4,
-        age: "1-2 months",
-        type: "Tops",
-        name: "Soft Cotton Tee",
-        brand: "Colored Organics",
-        imgName: clothing4_og,
-        favorite: heart_outline
-      },
-      {
-        id: 9,
-        imgPath: clothing1,
-        age: "5-6 months",
-        type: "Dresses",
-        name: "Floral Dress",
+        name: "Green Overalls",
         brand: "Jacadi",
-        imgName: clothing1_og,
-        favorite: heart_outline
-      },
-      {
-        id: 10,
-        imgPath: clothing2,
-        age: "3-4 months",
-        type: "Onesies",
-        name: "Out and About Romper",
-        brand: "Monica + Andy",
-        imgName: clothing2_og,
-        favorite: heart_outline
-      },
-      {
-        id: 11,
-        imgPath: clothing3,
-        age: "1-2 months",
-        type: "Tops",
-        name: "Fleece Jacket",
-        brand: "Winter Water Factory",
-        imgName: clothing3_og,
-        favorite: heart_outline
-      },
-      {
-        id: 12,
-        imgPath: clothing4,
-        age: "1-2 months",
-        type: "Tops",
-        name: "Soft Cotton Tee",
-        brand: "Colored Organics",
-        imgName: clothing4_og,
-        favorite: heart_outline
-      },
-      {
-        id: 13,
-        imgPath: clothing1,
-        age: "5-6 months",
-        type: "Dresses",
-        name: "Floral Dress",
-        brand: "Jacadi",
-        imgName: clothing1_og,
-        favorite: heart_outline
-      },
-      {
-        id: 14,
-        imgPath: clothing2,
-        age: "3-4 months",
-        type: "Onesies",
-        name: "Out and About Romper",
-        brand: "Monica + Andy",
-        imgName: clothing2_og,
-        favorite: heart_outline
-      },
-      {
-        id: 15,
-        imgPath: clothing3,
-        age: "1-2 months",
-        type: "Tops",
-        name: "Fleece Jacket",
-        brand: "Winter Water Factory",
-        imgName: clothing3_og,
+        imgName: clothing5_og,
         favorite: heart_outline
       },
       {
         id: 16,
-        imgPath: clothing4,
-        age: "1-2 months",
+        imgPath: clothing16,
+        age: "3-4 months",
+        type: "Bottoms",
+        name: "Blue Jeans",
+        brand: "Jacadi",
+        imgName: clothing16_og,
+        favorite: heart_outline
+      },
+      {
+        id: 6,
+        imgPath: clothing6,
+        age: "5-6 months",
+        type: "Onesies",
+        name: "Polar Bear Onesie",
+        brand: "Jacadi",
+        imgName: clothing6_og,
+        favorite: heart_outline
+      },
+      {
+        id: 7,
+        imgPath: clothing7,
+        age: "5-6 months",
+        type: "Shoes",
+        name: "Pink Sandals",
+        brand: "Monica + Andy",
+        imgName: clothing7_og,
+        favorite: heart_outline
+      },
+      {
+        id: 8,
+        imgPath: clothing8,
+        age: "5-6 months",
         type: "Tops",
-        name: "Soft Cotton Tee",
+        name: "Linen Pajamas",
+        brand: "Winter Water Factory",
+        imgName: clothing8_og,
+        favorite: heart_outline
+      },
+      {
+        id: 9,
+        imgPath: clothing9,
+        age: "7-8 months",
+        type: "Bottoms",
+        name: "Black Denim Shorts",
+        brand: "Winter Water Factory",
+        imgName: clothing9_og,
+        favorite: heart_outline
+      },
+      {
+        id: 10,
+        imgPath: clothing10,
+        age: "7-8 months",
+        type: "Bottoms",
+        name: "Green Shorts",
+        brand: "Winter Water Factory",
+        imgName: clothing10_og,
+        favorite: heart_outline
+      },
+      {
+        id: 11,
+        imgPath: clothing11,
+        age: "9-10 months",
+        type: "Onesies",
+        name: "Striped Denim Onesie",
+        brand: "Monica + Andy",
+        imgName: clothing11_og,
+        favorite: heart_outline
+      },
+      {
+        id: 12,
+        imgPath: clothing12,
+        age: "9-10 months",
+        type: "Tops",
+        name: "Graphic Matching Set",
         brand: "Colored Organics",
-        imgName: clothing4_og,
+        imgName: clothing12_og,
+        favorite: heart_outline
+      },
+      {
+        id: 13,
+        imgPath: clothing13,
+        age: "9-10 months",
+        type: "Bottoms",
+        name: "Striped Pants",
+        brand: "Colored Organics",
+        imgName: clothing13_og,
+        favorite: heart_outline
+      },
+      {
+        id: 14,
+        imgPath: clothing14,
+        age: "11-12 months",
+        type: "Onesies",
+        name: "Yellow Onesie",
+        brand: "Colored Organics",
+        imgName: clothing14_og,
+        favorite: heart_outline
+      },
+      {
+        id: 15,
+        imgPath: clothing15,
+        age: "11-12 months",
+        type: "Tops",
+        name: "Striped Matching Set",
+        brand: "Colored Organics",
+        imgName: clothing15_og,
         favorite: heart_outline
       }
       ],

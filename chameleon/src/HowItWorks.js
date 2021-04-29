@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import './HowItWorks.css';
 import { Redirect } from "react-router-dom";
 
-
+import HIWheader from './images/HIW-header.png';
 import step1 from './images/Step1.png';
 import step2 from './images/Step2.png';
 import step3 from './images/Step3.png';
@@ -27,6 +27,7 @@ export class HowItWorks extends React.Component {
                 </div>
 
                 <div class="marginFix"> </div>
+                <div class="HIW-header"><img src={HIWheader}></img></div>
                 
                 {/*How It Works*/}
                 <div class="title">How It Works</div>
@@ -61,11 +62,11 @@ export class HowItWorks extends React.Component {
                     <div class="title-sanitation">Sanitation</div>
                     <div className="flex-container-HIW">
                         <div class="flex-child-sanitation-info">
-                            <div class="sanitation-title">INSPECTION</div>
+                            <div class="HIW-sanitation-title">INSPECTION</div>
                             <div class="sanitation-body">Inspect for staining and to see if any items need to be retired.</div>
-                            <div class="sanitation-title">CLEAN</div>
+                            <div class="HIW-sanitation-title">CLEAN</div>
                             <div class="sanitation-body">Organic laundry detergent appropriate for sensitive skin.</div>
-                            <div class="sanitation-title">STEAM</div>
+                            <div class="HIW-sanitation-title">STEAM</div>
                             <div class="sanitation-body">Every item is steamed before getting prepared for another family.</div>
                         </div>
                         <div class="flex-child-sanitation-img">

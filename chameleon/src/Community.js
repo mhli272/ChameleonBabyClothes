@@ -24,7 +24,7 @@ export class Community extends React.Component {
 
                 <div class="marginFix"> </div>
 
-                <div class="title">Community</div>
+                <div class="community-title">Community</div>
                 <div class="subtitle">We want Chameleon to be a place for parents to share their clothing and tips and tricks for taking care of their newborns</div>
                 <div class="community-img"><img src={community1}></img></div>
                 <div class="community-img"><img src={community2}></img></div>

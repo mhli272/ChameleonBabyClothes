@@ -27,7 +27,6 @@ export class HowItWorks extends React.Component {
                 </div>
 
                 <div class="marginFix"> </div>
-                <div class="HIW-header"><img src={HIWheader}></img></div>
                 
                 {/*How It Works*/}
                 <div class="title">How It Works</div>
